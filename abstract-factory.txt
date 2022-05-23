@@ -1,0 +1,58 @@
+
+
+## https://www.geeksforgeeks.org/abstract-factory-pattern/
+
+ O padão de projeto abstract factory é um dos padrões Creational.
+
+ O padrão é bem parecido ao 'Factory Patterns', e é considerado como uma ca-
+mada de abstração do mesmo.
+
+ O padrão abstract factory funciona como uma superfábrica que cria outras fá-
+bricas. A implementação desse padrão nos permite criar objetos que seguem um
+padrão geral, assim, em tempo de execução, o padrão é acoplado a qualquer fá-
+brica concreta desejada que pode criar objetos do tipo desejado.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+##-> Exemplo UML para Abstract Factory Design Pattern
+
+          ________________
+      z---|              |------------------------------------------z
+      |   |    client    |---------------z                          |
+      |   ----------------               |                          |
+      |                                  |                         \|/
+      |                                 \|/                 __________________
+     \|/                         _________________          | <<interface>>  |
+__________________               | <<interface>> |          |    Product B   | 
+| <<interface>>  |               |   Product A   |          ------------------
+|Abstract Factory|               -----------------              /|\      /|\   
+| =-=-=-==-=-=-= |                       /|\                     |        |
+|C_product():P.A |                        |                      |        |
+|C_product():P.B |                        |                      |        |
+------------------                        |----------z           |        |
+       /|\                                |          |           |        |
+        |------------z                    |          |           |        |
+        |            |                 x  |          |           |        |  
+__________________  __________________ | ________  ________  ________  ________
+|ConcrectFactoryX|  |ConcrectFactoryY| x |produc|  |produc|  |produc|  |produc|
+| =-=-=-=-=-=-=- |  | =-=-=-=-=-=-=- | | |t     |  |t     |  |t     |  |t     |
+|C_product():P.A |  |C_product():P.A | | |  AX  |  |  AY  |  |  BX  |  |  BY  |
+|C_product():P.B |  |C_product():P.B | x |      |  |      |  |      |  |      |
+------------------  ------------------ | --------  --------  --------  --------
+   |         |           |       |     x   /|\       /|\       /|\       /|\
+   |         |           |       |          |         |         |         |
+   |         z-----------|-------|----------z         |         |         |
+   z---------------------|-------|--------------------|---------z         |
+                         z-------|--------------------|-------------------z
+                                 z--------------------z
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 
+
+ Nesse exemplo, temos uma interface de fabrica abstrata e também as interfa-
+ces de produtos A e B. A fábrica X usa como molde a interface de fabrica abs-
+trata, e cria produtos do tipo A e B, que utilizam da classe abstrata de ca-
+da um.
+
+
+
+
+
